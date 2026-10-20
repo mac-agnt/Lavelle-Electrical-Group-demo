@@ -1,0 +1,86 @@
+/* Site Operations, Dashboard body and Records relationship explorer.
+   Built on the Pulse/Lavelle tokens only. */
+
+/* ── Site report cards ── */
+.lvx-report{display:flex;flex-direction:column;gap:10px}
+.lvx-report .meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:11.5px;color:var(--dim)}
+.lvx-report .meta b{color:var(--ink);font-weight:500}
+.lvx-report dl{display:grid;grid-template-columns:118px minmax(0,1fr);gap:6px 12px;margin:0;font-size:12.5px;line-height:1.45}
+.lvx-report dt{color:var(--faint);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding-top:2px}
+.lvx-report dd{margin:0;color:var(--body);min-width:0}
+.lvx-photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:5px}
+.lvx-photo{aspect-ratio:4/3;border-radius:7px;border:1px solid var(--border);display:flex;align-items:flex-end;justify-content:flex-start;padding:3px 5px;font-family:var(--mono);font-size:8.5px;color:var(--faint);
+  background:linear-gradient(155deg,color-mix(in srgb,var(--lv-c1) 22%,transparent),color-mix(in srgb,var(--lv-c2) 10%,transparent) 60%,transparent),var(--surface-2)}
+.lvx-photo.more{align-items:center;justify-content:center;font-size:11px;color:var(--dim);background:var(--surface-2)}
+.lvx-progress{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;font-size:12px}
+
+/* ── dual progress rows (physical vs valued) ── */
+.lvx-dual{display:flex;flex-direction:column;gap:12px}
+.lvx-dual .row{display:grid;grid-template-columns:minmax(120px,200px) minmax(0,1fr) 120px;gap:12px;align-items:center;font-size:12.5px}
+.lvx-dual .row .bars{display:flex;flex-direction:column;gap:4px}
+.lvx-dual .row .nums{font-variant-numeric:tabular-nums;font-size:11.5px;color:var(--dim);text-align:right;white-space:nowrap}
+.lvx-dual .row .nums b{color:var(--ink);font-weight:500}
+.lvx-dual .bar2 > i{background:var(--lv-c3) !important}
+
+/* ── unit grid helpers ── */
+.lvx-block{margin-bottom:12px}
+.lvx-block h4{margin:0 0 7px;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.lvx-pipkey{display:flex;flex-wrap:wrap;gap:14px;font-size:11.5px;color:var(--dim)}
+.lvx-pipkey span{display:inline-flex;align-items:center;gap:6px}
+.lvx-pipkey i{width:16px;height:4px;border-radius:2px;background:var(--track);display:inline-block}
+.lvx-pipkey i.f{background:var(--lv-c1)} .lvx-pipkey i.h{background:color-mix(in srgb,var(--lv-c1) 55%,transparent)}
+
+/* ── profitability comparison ── */
+.lvx-prof{display:flex;flex-direction:column}
+.lvx-prof .hd,.lvx-prof .pr{display:grid;grid-template-columns:minmax(150px,1.3fr) minmax(160px,2fr) 96px 96px 118px;gap:14px;align-items:center;padding:10px 18px}
+.lvx-prof .hd{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);border-bottom:1px solid var(--border);padding-top:4px;padding-bottom:8px}
+.lvx-prof .pr{border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s var(--ease);font-size:12.5px}
+.lvx-prof .pr:last-child{border-bottom:0}
+.lvx-prof .pr:hover{background:var(--surface-2)}
+.lvx-prof .nm{min-width:0}
+.lvx-prof .nm .t{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lvx-prof .nm .s{font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-top:2px}
+.lvx-prof .mg{display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:10px;align-items:center}
+.lvx-prof .mg .n{font-variant-numeric:tabular-nums;font-size:11.5px;color:var(--dim);white-space:nowrap;text-align:right}
+.lvx-prof .mg .n b{color:var(--ink);font-weight:600}
+.lvx-prof .r{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink)}
+.lvx-axis{display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:10px;font-family:var(--mono);font-size:9.5px;color:var(--faint)}
+.lvx-axis > div{display:flex;justify-content:space-between}
+
+/* ── cash flow week table ── */
+.lvx-neg{color:var(--bad)} .lvx-pos{color:var(--ok)}
+.lvx-proj{font-style:italic}
+
+/* ── relationship explorer ── */
+.lvx-chainwrap{display:flex;flex-direction:column;gap:14px}
+.lvx-chain{display:flex;flex-wrap:wrap;align-items:stretch;row-gap:12px;padding:2px 2px 4px}
+.lvx-node{flex:none;width:168px;min-height:112px;display:flex;flex-direction:column;gap:5px;padding:11px 12px;border-radius:14px;border:1px solid var(--border);background:var(--surface-2);cursor:pointer;text-align:left;color:inherit;font:inherit;transition:border-color .18s var(--ease),transform .18s var(--ease)}
+.lvx-node:hover{border-color:var(--border-strong);transform:translateY(-1px)}
+.lvx-node .k{font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.lvx-node .id{font-family:var(--mono);font-size:11px;color:var(--accent);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lvx-node .t{font-size:12.5px;color:var(--ink);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.lvx-node .v{font-size:13.5px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;margin-top:auto}
+.lvx-node .s{font-size:11px;color:var(--dim);line-height:1.35}
+.lvx-node.focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-faint);background:linear-gradient(160deg,var(--accent-faint),transparent 70%),var(--surface-2)}
+.lvx-node.warn{border-color:color-mix(in srgb,var(--warn) 55%,transparent)}
+.lvx-node.bad{border-color:color-mix(in srgb,var(--bad) 55%,transparent)}
+.lvx-node.ghost{border-style:dashed;background:none}
+.lvx-arrow{flex:none;width:26px;display:flex;align-items:center;justify-content:center;color:var(--faint)}
+.lvx-arrow svg{width:18px;height:18px}
+.lvx-chain-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.lvx-chain-h .t{font-size:13px;font-weight:600;color:var(--ink)}
+.lvx-chain-h .s{font-size:11.5px;color:var(--dim)}
+
+@media (max-width: 760px){
+  .lvx-report dl{grid-template-columns:96px minmax(0,1fr)}
+  .lvx-dual .row{grid-template-columns:minmax(0,1fr);gap:6px}
+  .lvx-dual .row .nums{text-align:left}
+  .lvx-prof .hd{display:none}
+  .lvx-prof .pr{grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;padding:12px 14px}
+  .lvx-prof .pr .mg{grid-column:1 / -1;order:3}
+  .lvx-prof .pr .cv{display:none}
+  .lvx-chain{flex-direction:column;overflow-x:visible}
+  .lvx-node{width:100%;min-height:0}
+  .lvx-arrow{width:100%;height:22px}
+  .lvx-arrow svg{transform:rotate(90deg)}
+}

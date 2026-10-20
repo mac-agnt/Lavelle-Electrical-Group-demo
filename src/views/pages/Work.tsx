@@ -251,7 +251,7 @@ export default function Work({ v }: Props) {
                       </svg>
                     </button>
                     <div style={{"flex":"1","minWidth":"0"}}>
-                      <div style={css(cat("font-size:15px;line-height:1.35;color:", t?.color, ";text-decoration:", t?.strike))}>
+                      <div onClick={t?.open} title="Open the linked record" style={css(cat("font-size:15px;line-height:1.35;cursor:pointer;color:", t?.color, ";text-decoration:", t?.strike))}>
                         {txt(t?.title)}
                       </div>
                       <div style={{"display":"flex","flexWrap":"wrap","alignItems":"center","gap":"18px","marginTop":"8px"}}>

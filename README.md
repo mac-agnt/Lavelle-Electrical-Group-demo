@@ -1,6 +1,6 @@
 # Pulse — Harbour
 
-React build of the **Pulse v5 Harbour** design from Claude Design, the operations dashboard mocked up for Kilbride Group.
+React build of the **Pulse v5 Harbour** design, customised as an operational demo for **Lavelle Electrical Group** (Dublin and Galway electrical contractor). All business figures are illustrative demo data; integrations (Xero, Sync, Countfire, fuel CSV) are simulated.
 
 Every page, theme and interaction from the design is here. Screens were checked against the original mockup and match pixel for pixel at 1440×900 and 1024×720.
 
@@ -20,7 +20,9 @@ npm run build      # type-check + production build into dist/
 | Overlays: ⌘K palette, agent studio, Helios mini chat, work viewer, new record, background gallery | `src/views/overlays/` |
 | App frame: sidebar, top bar, notifications | `src/views/AppShell.tsx` |
 | State and behaviour | `src/logic/PulseLogic.js` |
-| Demo data (Kilbride Group) | `src/logic/data.js` |
+| Shell demo data (agents, settings, activity, ontology) | `src/logic/data.js` |
+| Lavelle dataset, finance calculations, shared store, answer engine | `src/lavelle/` (`seed.ts`, `calc.ts`, `store.ts`, `answers.ts`) |
+| Lavelle modules (Projects, Estimating, Claims & Finance, Workforce, Site Operations, Procurement, Fleet & Fuel, Dashboard, Relationships) | `src/views/lavelle/` |
 | Agent avatar | `src/components/AgentFace.tsx` |
 | Theme tokens (Harbour, light and 11 more), animations | `src/styles/pulse.css` |
 

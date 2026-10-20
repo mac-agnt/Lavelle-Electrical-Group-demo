@@ -8,7 +8,7 @@ type Props = { v: any };
 export default function Home({ v }: Props) {
   return (
     <>
-      <div style={{"position":"relative","display":"flex","gap":"20px","height":"100%","padding":"0 22px 22px"}}>
+      <div className="lv-home-wrap" style={{"position":"relative","display":"flex","gap":"20px","height":"100%","padding":"0 22px 22px"}}>
         <div style={css(v.homeCanvasStyle)} />
         <div style={css(v.chatColumnStyle)}>
           {v.heliosEmpty && (

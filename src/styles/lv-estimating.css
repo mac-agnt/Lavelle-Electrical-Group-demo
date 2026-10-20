@@ -1,0 +1,26 @@
+/* Estimating: stage pipeline, review checkboxes, editable quote inputs. */
+
+.lv-pipe{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px}
+.lv-pipe-st{position:relative;display:block;width:100%;padding:12px 12px 11px;border:1px solid var(--border);border-radius:var(--r-md,12px);background:var(--surface-2);cursor:pointer;text-align:left;color:inherit;font:inherit;min-width:0;transition:border-color .2s var(--ease),transform .18s var(--ease)}
+.lv-pipe-st:hover{border-color:var(--border-strong);transform:translateY(-1px)}
+.lv-pipe-st .k{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lv-pipe-st .n{font-size:22px;font-weight:600;letter-spacing:-.6px;color:var(--ink);margin-top:6px;font-variant-numeric:tabular-nums;line-height:1.05}
+.lv-pipe-st .v{font-size:11.5px;color:var(--dim);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums}
+.lv-pipe-st .b{height:3px;border-radius:2px;background:var(--track);margin-top:10px;overflow:hidden}
+.lv-pipe-st .b > i{display:block;height:100%;background:var(--lv-grad);border-radius:2px}
+.lv-pipe-st.hot{border-color:var(--accent-line);background:linear-gradient(160deg,var(--accent-faint),transparent 70%),var(--surface-2)}
+.lv-pipe-st.end{border-style:dashed}
+
+.lv-check{width:16px;height:16px;accent-color:var(--lv-cyan);cursor:pointer;vertical-align:middle;margin:0}
+.lv-qin{width:78px;height:28px;padding:0 8px}
+.lv-qin:disabled{opacity:.6;cursor:not-allowed}
+
+.lv-chain{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px}
+.lv-chain .node{display:inline-flex;flex-direction:column;gap:2px;padding:8px 11px;border:1px solid var(--border);border-radius:var(--r-sm,10px);background:var(--surface-2);min-width:0}
+.lv-chain .node b{font-family:var(--mono);font-size:11.5px;font-weight:500;color:var(--ink)}
+.lv-chain .node span{font-size:11px;color:var(--dim)}
+.lv-chain .node.on{border-color:var(--accent-line);background:var(--accent-faint)}
+.lv-chain .arr{color:var(--faint);font-size:13px}
+
+@media (max-width:1100px){.lv-pipe{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:760px){.lv-pipe{grid-template-columns:repeat(2,minmax(0,1fr))}.lv-pipe-st .n{font-size:19px}}

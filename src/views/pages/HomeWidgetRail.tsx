@@ -1,12 +1,13 @@
 import { Fragment } from "react";
 import { arr, cat, css, txt } from "../../runtime/template";
+import HomeRailLv from "../lavelle/HomeRailLv";
 
 type Props = { v: any };
 
 export default function HomeWidgetRail({ v }: Props) {
   return (
     <>
-      <aside style={{"position":"relative","zIndex":"1","width":"352px","flex":"none","minHeight":"0","overflowY":"auto","display":"flex","flexDirection":"column","gap":"14px","padding":"2px 0 6px 20px"}}>
+      <aside className="lv-home-rail" style={{"position":"relative","zIndex":"1","width":"clamp(352px,34vw,480px)","flex":"none","minHeight":"0","overflowY":"auto","display":"flex","flexDirection":"column","gap":"14px","padding":"2px 0 6px 20px"}}>
         <div style={{"flex":"0 0 auto","minWidth":"0","overflow":"hidden","display":"flex","flexWrap":"nowrap","alignItems":"center","justifyContent":"space-between","gap":"4px","padding":"2px 0 4px","fontFamily":"var(--mono)"}}>
           {arr(v.flipUnits).map((u: any, i15: number) => (
             <Fragment key={i15}>
@@ -91,6 +92,7 @@ export default function HomeWidgetRail({ v }: Props) {
             </div>
           </>
         )}
+        <HomeRailLv show={v.show} edit={v.widgetEdit} remove={v.removeWidget} ask={v.askHome} />
         {v.show?.inbox && (
           <>
             <div style={{"background":"var(--surface)","border":"1px solid var(--border)","borderRadius":"var(--card-r,18px)","backdropFilter":"blur(20px) saturate(1.3)","boxShadow":"var(--card-shadow)","transition":"transform .28s var(--ease),border-color .24s var(--ease),box-shadow .28s var(--ease)","padding":"20px 22px 10px"}}>
